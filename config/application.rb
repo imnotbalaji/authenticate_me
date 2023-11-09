@@ -36,8 +36,8 @@ module AuthenticateMe
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    confg.middleware.use ActionDispatch::cookies
-    config.middlware.use ActionDispatch::Session::CookieStore,
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore,
       key: '_auth_me_session',
       same_site: :lax,
       secure: Rails.env.production?
